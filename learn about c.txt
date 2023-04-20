@@ -1,0 +1,30 @@
+#include <string.h>
+#include "main.h"
+#include <stdlib.h>
+char *_strdup(char *str)
+{
+        unsigned int i;
+        char c;
+
+        if (str == NULL)
+        {
+                return NULL;
+        }
+
+        c = (char *)malloc(sizeof(char) * (strlen(str) + 1));
+
+        for (i = 0; i < strlen(str); i++)
+        {
+                c[i] = str[i];
+        }
+        c[strlen(str)] = '\0';
+return c;
+}
+
+size_t is commonly used to represent the size of arrays, the length of strings, 
+and the number of bytes allocated by the malloc function, among other things.
+
+The actual size of size_t may vary depending on the implementation, but it's guaranteed
+ to be able to represent the size of the largest object that can be allocated on the system.
+
+and it works on stddef.h
